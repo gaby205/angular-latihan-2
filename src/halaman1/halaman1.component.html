@@ -1,0 +1,22 @@
+<div>
+  <p>
+      Judul :
+      <input type="text" [(ngModel)]="judulnote"/><br><br>
+      Isi :
+      <input type="text" [(ngModel)]="isinote"/><br><br>
+      Tanggal dibuat :
+      <input type="date" [(ngModel)]="tglnote"/><br><br>
+  </p>
+  <button (click)="save()">SAVE</button>
+</div>
+
+<div>
+  <p>
+    {{cob1}}
+    <br>
+    {{cob2}}
+    <br>
+    {{cob3}}
+    <br>
+  </p>
+</div>

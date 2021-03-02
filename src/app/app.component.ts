@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'my-app',
@@ -6,5 +7,20 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
+  constructor(private router : Router){}
   name = 'Angular ' + VERSION.major;
+
+  
+
+  InputNote(){
+    this.router.navigate(["/halaman1"]);
+  }
+
+  DetailNote(){
+    this.router.navigate(["/halaman2"]);
+  }
+
+  FavNote(){
+    this.router.navigate(["/halaman3"]);
+  }
 }
