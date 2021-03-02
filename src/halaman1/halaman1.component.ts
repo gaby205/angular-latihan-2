@@ -10,10 +10,10 @@ import { GlobalvarService } from '../globalvar.service';
 export class Halaman1Component implements OnInit {
 
   constructor(private router : ActivatedRoute, public datanotes : GlobalvarService){}
-  judulnote:string;
-  isinote:string;
-  tglnote:string;
-  cob1;
+  judulnote:string[];
+  isinote:string[];
+  tglnote:string[];
+  cob1 : string[];
   cob2;
   cob3;
   ngOnInit() {
@@ -24,8 +24,6 @@ export class Halaman1Component implements OnInit {
     this.datanotes.setJudulnote(this.judulnote);
     this.datanotes.setIsinote(this.isinote);
     this.datanotes.setTglnote(this.tglnote); 
-    this.cob1 = this.datanotes.getJudulnote();
-    this.cob2 = this.datanotes.getIsinote();
-    this.cob3 = this.datanotes.getTglnote();
+    this.cob1= this.datanotes.getJudulnote();  
   }
 }
