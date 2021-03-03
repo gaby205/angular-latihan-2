@@ -9,18 +9,16 @@ import { GlobalvarService } from '../globalvar.service';
 })
 export class Halaman2Component implements OnInit {
 
-  constructor(private router : ActivatedRoute, public datanotes : GlobalvarService)
-  {
-    this.judulnote = this.datanotes.getJudulnote();
-    this.isinote = this.datanotes.getIsinote();
-    this.tglnote = this.datanotes.getTglnote();
+  constructor(private router : ActivatedRoute, public datanotes : GlobalvarService){
+    
   }
-
-  judulnote;
-  isinote;
-  tglnote;
+  judulnote:string[] = this.datanotes.getJudulnote();
+  isinote:string[] = this.datanotes.getIsinote();
+  tglnote:string[] = this.datanotes.getTglnote();
+  count = this.datanotes.getCounter(); 
 
   ngOnInit() {
+    
   }
 
 }

@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class GlobalvarService {
-  private judulnote: string[];
-  private isinote: string[];
-  private tglnote: string[];
+  private judulnote = [];
+  private isinote = [];
+  private tglnote = [];
+  private fav = [];
+  private counter = 0;
   constructor() {}
 
   public getJudulnote(){
@@ -17,16 +19,31 @@ export class GlobalvarService {
     return this.tglnote;
   }
 
-  public setJudulnote(judul:string[]){
-    this.judulnote = judul;
+  public getCounter(){
+    return this.counter;
   }
 
-  public setIsinote(isi:string[]){
-    this.isinote = isi;
+  public setJudulnote(x, judul){
+    this.judulnote[x] = judul;
   }
 
-  public setTglnote(tgl:string[]){
-    this.tglnote = tgl;
+  public setIsinote(x , isi){
+    this.isinote[x] = isi;
   }
 
+  public setTglnote(x , tgl){
+    this.tglnote[x] = tgl;
+  }
+
+  public setFav(x,state : boolean){
+    this.fav[x] = state;
+  }
+
+  public AddNewNote(judul,isi,tgl) {
+    this.judulnote.push(judul);
+    this.isinote.push(isi);
+    this.tglnote.push(tgl);
+    this.fav.push(false);
+    this.counter++;
+  }
 }
