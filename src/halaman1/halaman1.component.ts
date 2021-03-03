@@ -10,7 +10,11 @@ import { GlobalvarService } from '../globalvar.service';
 export class Halaman1Component implements OnInit {
 
   constructor(private router : ActivatedRoute, public datanotes : GlobalvarService){}
-  
+  judulnote:string[];
+  isinote:string[];
+  tglnote:string[];
+  count; 
+
   ngOnInit() {
 
   }
