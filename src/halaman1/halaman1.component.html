@@ -10,10 +10,13 @@
   </p>
   <button (click)="save(judul,isi,tgl)">SAVE</button>
 </div>
-
+<br>
 <div *ngFor ="let data of judulnote; let i = index;">
-	{{i + 1}}. {{data}}<button (click)="viewdetail(i)">VIEW DETAIL</button> 
+	Notes ke : {{i + 1}}<br>
+  Judul : {{data}}<br>
+  <button (click)="viewdetail(i)">VIEW DETAIL</button> 
 	<br>
+  <br>
 </div>
 
 <router-outlet></router-outlet>

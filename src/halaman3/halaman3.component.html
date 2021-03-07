@@ -2,7 +2,8 @@
 <div *ngFor="let data of judulnote; let i = index;">
   <div *ngIf="favnote[i] == true; then favorited else unfavorited"></div>
   <ng-template #favorited>
-    {{i + 1}}. {{data}}
+    Notes ke : {{i + 1}}<br>
+    Judul :{{data}}<br>
     <button (click)="viewdetail(i)">VIEW DETAIL</button> 
   </ng-template>
   <ng-template #unfavorited></ng-template>
