@@ -29,15 +29,16 @@ export class Halaman2Component implements OnInit {
   favorite(i)
   {
     this.favstate = this.datanotes.getFav(i);
-    if (this.favstate == true)
+    if (this.favstate == false)
     {
-      this.favstate = false;
+      this.favstate = true;
+      this.datanotes.setFav(i,this.favstate);
     }
     else
     {
-      this.favstate = true;
+      this.favstate = false;
+      this.datanotes.setFav(i,this.favstate);
     }
-    this.datanotes.setFav(i,this.favstate);
   }
 
   ngOnInit() {

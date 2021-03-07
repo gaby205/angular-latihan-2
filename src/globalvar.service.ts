@@ -5,7 +5,7 @@ export class GlobalvarService {
   private judulnote = [];
   private isinote = [];
   private tglnote = [];
-  private fav = [];
+  private fav : boolean[] = [];
   private counter = 0;
   constructor() {}
 

@@ -6,6 +6,6 @@
 <br><br>
 {{tgl}}
 <br><br>
-<div *ngIf="favnote[i] == true; then favorited else unfavorited"></div>
-  <ng-template #favorited><button (click)="favorite(i)">Favorited</button></ng-template>
-  <ng-template #unfavorited><button (click)="favorite(i)">Favorite Note</button></ng-template>
+<div *ngIf="favnote[paramIn] == true; then favorited else unfavorited"></div>
+  <ng-template #favorited><button (click)="favorite(paramIn)">Favorited</button></ng-template>
+  <ng-template #unfavorited><button (click)="favorite(paramIn)">Favorite Note</button></ng-template>
