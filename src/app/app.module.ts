@@ -13,7 +13,7 @@ import {GlobalvarService} from '../globalvar.service';
 
 const ROUTES : Routes = [
   {path : 'halaman1', component: Halaman1Component},
-  {path : 'halaman2', component: Halaman2Component},
+  {path : 'halaman2/:index', component: Halaman2Component},
   {path : 'halaman3', component: Halaman3Component}
 ]
 

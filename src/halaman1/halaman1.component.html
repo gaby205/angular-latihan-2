@@ -1,12 +1,18 @@
 <div>
   <p>
       Judul :
-      <input type="text" [(ngModel)]="judulnote"/><br><br>
+      <input type="text" [(ngModel)]="judul"/><br><br>
       Isi :
-      <input type="text" [(ngModel)]="isinote"/><br><br>
+      <input type="text" [(ngModel)]="isi"/><br><br>
       Tanggal dibuat :
-      <input type="date" [(ngModel)]="tglnote"/><br><br>
+      <input type="date" [(ngModel)]="tgl"/><br><br>
   </p>
-  <button (click)="save(judulnote,isinote,tglnote)">SAVE</button>
+  <button (click)="save(judul,isi,tgl)">SAVE</button>
 </div>
 
+<div *ngFor ="let data of judulnote; let i = index;">
+	{{i + 1}}. {{data}}<button (click)="viewdetail(i)">VIEW DETAIL</button> 
+	<br>
+</div>
+
+<router-outlet></router-outlet>

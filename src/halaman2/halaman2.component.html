@@ -1,6 +1,11 @@
-<h3>LIST OF ALL NOTES</h3>
-
-<div *ngFor ="let judul of judulnote">
-	{{judul}}
-	<br>
-</div>
+<h3>THE DETAIL NOTE </h3>
+<br><br>
+{{judul}}
+<br><br>
+{{isi}}
+<br><br>
+{{tgl}}
+<br><br>
+<div *ngIf="favnote[i] == true; then favorited else unfavorited"></div>
+  <ng-template #favorited><button (click)="favorite(i)">Favorited</button></ng-template>
+  <ng-template #unfavorited><button (click)="favorite(i)">Favorite Note</button></ng-template>

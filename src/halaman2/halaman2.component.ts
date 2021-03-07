@@ -10,20 +10,41 @@ import { GlobalvarService } from '../globalvar.service';
 export class Halaman2Component implements OnInit {
 
   constructor(private router : ActivatedRoute, public datanotes : GlobalvarService){
-    
+    // this.judulnote = this.datanotes.getJudulnote();
+    // this.isinote = this.datanotes.getIsinote();
+    // this.tglnote = this.datanotes.getTglnote();
   }
+  judulnote;
+  isinote;
+  tglnote;
+  paramIn;
+  favnote = this.datanotes.getFavs();
+  favstate;
+  judul;
+  isi;
+  tgl;
+  i;
   
-  judulnote:string[] = this.datanotes.getJudulnote();
-  isinote:string[] = this.datanotes.getIsinote();
-  tglnote:string[] = this.datanotes.getTglnote();
-  count = this.datanotes.getCounter(); 
 
-  // Favorite(){
-
-  // }
+  favorite(i)
+  {
+    this.favstate = this.datanotes.getFav(i);
+    if (this.favstate == true)
+    {
+      this.favstate = false;
+    }
+    else
+    {
+      this.favstate = true;
+    }
+    this.datanotes.setFav(i,this.favstate);
+  }
 
   ngOnInit() {
- 
+    this.paramIn = this.router.snapshot.paramMap.get("index");
+    this.judul = this.datanotes.getJudulnotes(this.paramIn);
+    this.isi = this.datanotes.getIsinotes(this.paramIn);
+    this.tgl = this.datanotes.getTglnotes(this.paramIn);
   }
 
 }

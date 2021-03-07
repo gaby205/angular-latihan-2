@@ -23,6 +23,24 @@ export class GlobalvarService {
     return this.counter;
   }
 
+  public getJudulnotes(x){
+    return this.judulnote[x];
+  }
+  public getIsinotes(x){
+    return this.isinote[x];
+  }
+  public getTglnotes(x){
+    return this.tglnote[x];
+  }
+
+  public getFav(x){
+    return this.fav[x];
+  }
+
+  public getFavs(){
+    return this.fav;
+  }
+
   public setJudulnote(x, judul){
     this.judulnote[x] = judul;
   }

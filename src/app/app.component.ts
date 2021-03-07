@@ -16,10 +16,6 @@ export class AppComponent  {
     this.router.navigate(["/halaman1"]);
   }
 
-  DetailNote(){
-    this.router.navigate(["/halaman2"]);
-  }
-
   FavNote(){
     this.router.navigate(["/halaman3"]);
   }

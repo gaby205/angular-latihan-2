@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { GlobalvarService } from '../globalvar.service';
 
 @Component({
@@ -9,15 +9,22 @@ import { GlobalvarService } from '../globalvar.service';
 })
 export class Halaman1Component implements OnInit {
 
-  constructor(private router : ActivatedRoute, public datanotes : GlobalvarService){}
-  judulnote:string[];
-  isinote:string[];
-  tglnote:string[];
+  constructor(private router: Router, private acrouter : ActivatedRoute, public datanotes : GlobalvarService){}
+  judulnote:string[] = this.datanotes.getJudulnote();
   count; 
 
   ngOnInit() {
 
   }
+
+  judul;
+  isi;
+  tgl;
+ 
+  viewdetail(index) {
+    this.router.navigate(["/halaman2/" + index]);
+  }
+  
 
   save(judulnote,isinote,tglnote){
     this.count = this.datanotes.getCounter();

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GlobalvarService } from '../globalvar.service';
 
 @Component({
   selector: 'app-halaman3',
@@ -7,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Halaman3Component implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private acrouter : ActivatedRoute, public datanotes : GlobalvarService){}
+  judulnote:string[] = this.datanotes.getJudulnote();
+  favnote = this.datanotes.getFavs();
 
+  viewdetail(index) {
+    this.router.navigate(["/halaman2/" + index]);
+  }
   ngOnInit() {
   }
 
